@@ -1,0 +1,47 @@
+##PHP 5.6
+=========
+
+LOCAL
+=====
+permisos 755 proyecto
+permisos 644 file php
+
+chmod -R 777 _library/Smarty/compile
+chmod -R 777 cache
+chmod -R 777 core/Web/_data
+
+sudo chgrp -R group ./
+sudo chown -R user:group ./
+find ./ -type d -exec chmod 755 -R {} \;
+find ./ -type f -exec chmod 644 {} \;
+
+
+CHANGE FILE ON THE SERVER
+=========================
+_library/Ey.php
+_library/FileService.php
+_library/Idioma.php
+_library/Ey/Upload.php
+
+core/Web/Admin/Banner/Svc/ActualizarBanner.php
+core/Web/Admin/Galerias/Svc/ActualizarGaleria.php
+core/Web/Admin/Noticias/Svc/ActualizarNoticia.php
+core/Web/Admin/Productos/Svc/ActualizarProducto.php
+core/Web/Admin/Productos/Svc/EliminarProducto.php
+core/Web/Db/Function.php
+core/Web/Wgt/
+
+Borrar archivos temporales cuando cambie sde version
+_library/Smarty/compile/*
+
+ACCOUNT FTP
+===========
+vardeveloper@immoeuropaperu.com
+ftp.immoeuropaperu.com
+147852369@
+
+SQL
+===
+alter table inmoeuro.categoria add column cat_orden tinyint  after cat_key;
+
+

@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#RewriteCond %{HTTP_HOST} ^www.immoeuropaperu.com
+#RewriteRule ^ http://immoeuropaperu.com%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php 
+</IfModule>
