@@ -11,7 +11,7 @@ class Web_Wgt_Header
                 ->from('categoria', array('cat_id', 'cat_padre_id', 'cat_nombre', 'cat_estado', 'cat_key'))
                 ->where('cat_padre_id=?', 0)
                 ->where('cat_estado<>?', 2)
-                ->order('cat_nombre');
+                ->order(array('cat_orden'));
         $rows = $db->fetchAll($select);
         
 //        Zend_Debug::dump($rows);

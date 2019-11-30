@@ -19,7 +19,6 @@
             </div>
             <div class="menu-and-contact-wrap">
                 <h2  class="contact-number">
-                    <!--i class="icon-phone"></i-->
                     <i class="flag-spain"></i>
                     (+34) 643 090533
                     <span class="outer-strip"></span>

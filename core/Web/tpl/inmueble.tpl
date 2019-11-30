@@ -48,6 +48,12 @@
                             </h5>
                         </div>
 
+                        <div class="property-meta clearfix">
+                            {foreach from=$producto->categories item=category}
+                            <span>{$category->cat_nombre}</span>
+                            {/foreach}
+                        </div>
+
                         <div class="content clearfix">
                             {$producto->pro_descripcion}
                         </div>

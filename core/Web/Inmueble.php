@@ -19,6 +19,7 @@ class Web_Inmueble extends Web_BasePage
         $rows = $db->fetchRow($select);
         
         $rows->pro_precio = number_format($rows->pro_precio, 2, '.', ',');
+        $rows->categories = Web_Db_Function::getCategories($rows->pro_id);
 
         $imagenes = '';
         for ($i = 1; $i < 7; $i++) {

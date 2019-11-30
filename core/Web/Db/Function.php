@@ -81,5 +81,18 @@ class Web_Db_Function
         return $optionsCategoria;
     }
 
+    static public function getCategories($id)
+    {
+        global $db;
+        $select = $db->select()
+                ->from('categoria_detalle', array('*'))
+                ->joinInner('categoria', 'det_padre_id = cat_id', array('cat_id', 'cat_nombre', 'cat_orden'))
+                ->where('det_pro_id = ?', $id)
+                ->order('cat_orden');
+        //echo($select);
+        $rows = $db->fetchAll($select);
+        return $rows;
+    }
+
 }
 

@@ -34,8 +34,9 @@
                                 </div>
 
                                 <div class="property-meta">
-                                    <span><strong>PER&Uacute;</strong></span>
-                                    <span><strong>DEPARTAMENTO</strong></span>
+                                    {foreach from=$producto->categories item=category}
+                                    <span><strong>{$category->cat_nombre}</strong></span>
+                                    {/foreach}
                                     <!--span>
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
                                         <path class="path" d="M14 7.001H2.999C1.342 7 0 8.3 0 10v11c0 1.7 1.3 3 3 3H14c1.656 0 3-1.342 3-3V10 C17 8.3 15.7 7 14 7.001z M14.998 21c0 0.551-0.447 1-0.998 1.002H2.999C2.448 22 2 21.6 2 21V10 c0.001-0.551 0.449-0.999 1-0.999H14c0.551 0 1 0.4 1 0.999V21z"/>
