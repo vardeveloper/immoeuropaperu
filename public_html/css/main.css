@@ -775,6 +775,7 @@ textarea:focus {
   float: right;
   width: 49.6%;
   padding-left: 10px;
+  min-height: 162px;
 }
 .property-item .price {
   padding: 8px 8px 10px 11px;

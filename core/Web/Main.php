@@ -17,7 +17,7 @@ class Web_Main extends Web_BasePage
                 ->where('pro_estado != ?', 2)
                 ->where('pro_destacar = ?', 1)
                 ->where('cat_id in (?)', array(Web_Db_Categorias::ID_PERU, Web_Db_Categorias::ID_SPAIN))
-                ->order(array('pro_id DESC', 'cat_orden'))
+                ->order(array('cat_id', 'pro_id DESC'))
                 ->limit(8);
         $products = $db->fetchAll($select);
         
