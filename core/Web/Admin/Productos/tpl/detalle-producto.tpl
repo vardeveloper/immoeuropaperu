@@ -13,7 +13,7 @@
         <div class="span w-45">
             <p class="des"><span class="ti">Nombre : </span> {$producto->pro_nombre}</p>
             <div class="des"><span class="ti">Descripcion : </span> {$producto->pro_descripcion}</div>
-            <p class="des"><span class="ti">Precio : </span> $ {$producto->pro_precio}</p>
+            <p class="des"><span class="ti">Precio : </span> {$producto->pro_tipo_moneda}{$producto->pro_precio}</p>
             <p class="des"><span class="ti"> En {$producto->pro_tipo} </span> </p>
         </div>
         <div class="span w-52">

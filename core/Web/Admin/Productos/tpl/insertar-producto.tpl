@@ -66,14 +66,24 @@
             </td>
         </tr>
         <tr>
-            <td class="rig">Precio $ :</td>
+            <td class="rig">Tipo Moneda:</td>
+            <td class="lef">
+                <select name="pro_tipo_moneda">
+                    <option value="US $">US $</option>
+                    <option value="PEN S/">PEN S/</option>
+                    <option value="EUR €">EUR €</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="rig">Precio :</td>
             <td class="lef">
                 <input type="text" name="pro_precio_s" value="{$post.pro_precio_s}" class="text w-10 span"/>
                 <p class="error">{$error.pro_precio_s}</p>
             </td>
         </tr>
         <tr>
-            <td class="rig">Tipo :</td>
+            <td class="rig">Condición :</td>
             <td class="lef">
                 <select name="pro_tipo">
                     <option value="venta">Venta</option>

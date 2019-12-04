@@ -21,7 +21,7 @@ class Web_Inmuebles extends Web_BasePage
             $obj = new Web_Db_Productos();
             $db = $obj->getAdapter();
             $select = $db->select()
-                    ->from(array('pro' => 'producto'), array('pro_id', 'pro_estado', 'pro_nombre', 'pro_key', 'pro_precio', 'pro_descripcion', 'pro_tipo'))
+                    ->from(array('pro' => 'producto'), array('pro_id', 'pro_estado', 'pro_nombre', 'pro_key', 'pro_precio', 'pro_descripcion', 'pro_tipo', 'pro_tipo_moneda'))
                     ->joinInner(array('det' => 'categoria_detalle'), 'pro.pro_id = det.det_pro_id', array('det_padre_id', 'det_cat_id'))
                     ->where('pro_estado <> ?', 2)
                     ->where('det_padre_id = ?', $cat_id)

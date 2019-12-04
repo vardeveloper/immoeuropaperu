@@ -11,7 +11,7 @@ class Web_Main extends Web_BasePage
         $obj = new Web_Db_Productos();
         $db = $obj->getAdapter();
         $select = $db->select()
-                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_tipo', 'pro_key'))
+                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_tipo', 'pro_key', 'pro_tipo_moneda'))
                 ->joinLeft('categoria_detalle', 'pro_id = det_pro_id',array())
                 ->joinLeft('categoria', 'det_padre_id = cat_id', array('cat_nombre'))
                 ->where('pro_estado != ?', 2)

@@ -37,7 +37,7 @@
         <tr class="{$producto.bgcolor}">
             <td class="c"><img src="{$producto.imagen}" /></td>
             <td class="j t"><b>{$producto.html2}</b><br/><br/>{$producto.descripcion}</td>
-            <td class="bld t r">USD$ {$producto.precio} &nbsp; </td>
+            <td class="bld t r">{$producto.tipo_moneda}{$producto.precio} &nbsp; </td>
             {if $tipo eq "administrador"}
             <td class="w-2 t c">{$producto.categorias}</td>
             <td class="w-2 t c">{$producto.bloquear}</td>

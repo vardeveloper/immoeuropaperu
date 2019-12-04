@@ -36,7 +36,7 @@ class Web_Admin_Productos_Wgt_Productos
         if ($order != '') {
             if ($order == 1) {
                 $select = $db->select()
-                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar'))
+                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar', 'pro_tipo_moneda'))
                         ->where('pro.pro_estado = ?', 0)
                         ->order('pro_id desc');
                 $htmlOrden.='<option value=""> - Seleccionar - </option>';
@@ -46,7 +46,7 @@ class Web_Admin_Productos_Wgt_Productos
             }
             if ($order == 2) {
                 $select = $db->select()
-                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar'))
+                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar', 'pro_tipo_moneda'))
                         ->where('pro.pro_estado <> ?', 2)
                         ->where('pro.pro_destacar = ?', 1)
                         ->order('pro_id desc');
@@ -57,7 +57,7 @@ class Web_Admin_Productos_Wgt_Productos
             }
             if ($order == 3) {
                 $select = $db->select()
-                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar'))
+                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar', 'pro_tipo_moneda'))
                         ->where('pro.pro_estado <> ?', 2)
                         ->where('pro.pro_oferta = ?', 1)
                         ->order('pro_id desc');
@@ -68,7 +68,7 @@ class Web_Admin_Productos_Wgt_Productos
             }
         } else {
             $select = $db->select()
-                    ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar'))
+                    ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar', 'pro_tipo_moneda'))
                     ->where('pro.pro_estado <> ?', 2)
                     ->order('pro_id desc');
             $htmlOrden.='<option value=""> - Seleccionar - </option>';
@@ -81,7 +81,7 @@ class Web_Admin_Productos_Wgt_Productos
         if ($unidadSelected > 0) {
             if ($categoriaSelected > 0) {
                 $select = $db->select()
-                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar'))
+                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar', 'pro_tipo_moneda'))
                         ->joinInner(array('det' => 'categoria_detalle'), 'pro.pro_id=det_pro_id', array('det_padre_id', 'det_cat_id'))
                         ->where('pro.pro_estado <> ?', 2)
                         ->where('det.det_padre_id = ?', $unidadSelected)
@@ -89,7 +89,7 @@ class Web_Admin_Productos_Wgt_Productos
                         ->order('pro_id desc');
             } else {
                 $select = $db->select()
-                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar'))
+                        ->from(array('pro' => 'producto'), array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_estado', 'pro_destacar', 'pro_tipo_moneda'))
                         ->joinInner(array('det' => 'categoria_detalle'), 'pro.pro_id=det_pro_id', array('det_padre_id'))
                         ->where('pro.pro_estado <> ?', 2)
                         ->where('det.det_padre_id = ?', $unidadSelected)
@@ -147,6 +147,7 @@ class Web_Admin_Productos_Wgt_Productos
                 $productos[] = array('html2' => $html2,
                     'imagen' => BASE_WEB_ROOT . '/svc/get-img/productos-pro_' . $row->pro_id . '_small/150',
                     'descripcion' => Ey::recortar($row->pro_descripcion, 200),
+                    'tipo_moneda' => $row->pro_tipo_moneda,
                     'precio' => number_format($row->pro_precio, 2, '.', ','),
                     'categorias' => $categorias,
                     'destacado' => $destacado,

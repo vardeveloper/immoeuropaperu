@@ -15,7 +15,7 @@
                     </figure>
                     <h4><a href="{$smarty.const.WEB_ROOT}/inmueble/{$producto->pro_key}" title="{$producto->pro_nombre}">{$producto->pro_nombre}</a></h4>
                     <p>{$producto->descripcion} <a href="#"> Ver mas </a> </p>
-                    <span class="price">$ {$producto->pro_precio}</span>
+                    <span class="price">{$producto->pro_tipo_moneda}{$producto->pro_precio}</span>
                 </li>
                 {/foreach}
             </ul>

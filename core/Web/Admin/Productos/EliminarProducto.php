@@ -17,7 +17,7 @@ class Web_Admin_Productos_EliminarProducto extends Web_Admin_MainPage
         $obj = new Web_Db_Productos();
         $db = $obj->getAdapter();
         $select = $db->select()
-                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio'))
+                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_tipo_moneda'))
                 ->order('pro_id desc')
                 ->where('pro_estado=?', 2);
 
@@ -49,6 +49,7 @@ class Web_Admin_Productos_EliminarProducto extends Web_Admin_MainPage
                     'html2' => $html2,
                     'titulo' => $row->pro_nombre,
                     'descripcion' => Ey::recortar($row->pro_descripcion, 200),
+                    'tipo_moneda' => $row->pro_tipo_moneda,
                     'precio' => number_format($row->pro_precio, 2, '.', ','),
                     'eliminar' => $eliminar,
                     'restaurar' => $restaurar,

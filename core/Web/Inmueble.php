@@ -13,7 +13,7 @@ class Web_Inmueble extends Web_BasePage
         $obj = new Web_Db_Productos();
         $db = $obj->getAdapter();
         $select = $db->select()
-                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_video', 'pro_tipo'))
+                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_video', 'pro_tipo', 'pro_tipo_moneda'))
                 ->where('pro_estado != ?', 2)
                 ->where('pro_key=\'' . $pro_key . '\'');
         $rows = $db->fetchRow($select);

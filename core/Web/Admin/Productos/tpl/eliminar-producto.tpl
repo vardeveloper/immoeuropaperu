@@ -18,7 +18,7 @@
         <tr class="{$producto.bgcolor}">
             <td class="w-15 c"><img src="{$smarty.const.WEB_ROOT}/svc/get-img/productos-pro_{$producto.id}_small/150:113" /></td>
             <td class="w-40 j t"><b>{$producto.html2}</b><br /><br />{$producto.descripcion}</td>
-            <td class="w-10 bld t r">S/. {$producto.precio} &nbsp; </td>
+            <td class="w-10 bld t r">{$producto.tipo_moneda}{$producto.precio} &nbsp; </td>
             <td class="w-6 t c">{$producto.restaurar}</td>
             <td class="w-6 t c">{$producto.eliminar}</td>
         </tr>

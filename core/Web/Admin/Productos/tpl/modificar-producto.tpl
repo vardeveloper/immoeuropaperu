@@ -68,14 +68,25 @@
             </td>
         </tr>
         <tr>
-            <td class="rig">Precio $ :</td>
+            <td class="rig">Tipo Moneda :</td>
+            <td class="lef">
+                <select name="pro_tipo_moneda">
+                    <option value=""> --------- </option>
+                    <option value="US $" {if $producto->pro_tipo_moneda eq 'US $'} selected {/if}>US $</option>
+                    <option value="PEN S/" {if $producto->pro_tipo_moneda eq 'PEN S/'} selected {/if}>PEN S/</option>
+                    <option value="EUR €" {if $producto->pro_tipo_moneda eq 'EUR €'} selected {/if}>EUR €</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="rig">Precio :</td>
             <td class="lef">
                 <input type="text" name="pro_precio_s" value="{$producto->pro_precio}" class="text w-10 span"/>
                 <p class="error">{$error.pro_precio_s}</p>
             </td>
         </tr>
         <tr>
-            <td class="rig">Tipo :</td>
+            <td class="rig">Condición :</td>
             <td class="lef">
                 <select name="pro_tipo">
                     <option value=""> --------- </option>

@@ -12,7 +12,7 @@
                     </figure>
                     <h4><a href="{$smarty.const.WEB_ROOT}/inmueble/{$producto->pro_key}" title="{$producto->pro_nombre}">{$producto->pro_nombre}</a></h4>
                     <p>{$producto->descripcion} <a href="{$smarty.const.WEB_ROOT}/inmueble/{$producto->pro_key}">Ver mas</a></p>
-                    <span class="price">$ {$producto->pro_precio} {if $producto->pro_tipo eq 'alquiler'}<small>por mes</small>{/if} </span> 
+                    <span class="price">{$producto->pro_tipo_moneda}{$producto->pro_precio} {if $producto->pro_tipo eq 'alquiler'}<small>por mes</small>{/if} </span> 
                 </li>
                 {/foreach}
             </ul>

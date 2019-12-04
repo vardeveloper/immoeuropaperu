@@ -26,7 +26,7 @@ class Web_Admin_Productos_Categorias extends Web_Admin_MainPage
         /* consulta para los datos del producto */
         global $db;
         $rsProducto = $db->fetchRow($db->select()
-                                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_fecha'))
+                                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_fecha', 'pro_tipo_moneda'))
                                 ->where('pro_id=?', $pro_id));
 
         $rsProducto->html2 = '<a class="deta" href="' . WEB_ROOT . '/admin/productos/detalle-producto/' . $pro_id . '">' . $rsProducto->pro_nombre . '</a>';

@@ -28,7 +28,7 @@
                                 </figure>
 
                                 <div class="detail">
-                                    <h5 class="price">$ {$producto->pro_precio} {if $producto->pro_tipo eq 'alquiler'}<small>por mes</small>{/if}</h5>
+                                    <h5 class="price">{$producto->pro_tipo_moneda}{$producto->pro_precio} {if $producto->pro_tipo eq 'alquiler'}<small>por mes</small>{/if}</h5>
                                     <p>{$producto->descripcion}</p>
                                     <a class="more-details" href="{$smarty.const.WEB_ROOT}/inmueble/{$producto->pro_key}">ver detalle  <i class="icon-caret-right"></i></a>
                                 </div>

@@ -16,7 +16,7 @@ class Web_Admin_Productos_DetalleProducto extends Web_Admin_MainPage
         $obj = new Web_Db_Productos();
         $db = $obj->getAdapter();
         $rs = $db->fetchRow($obj->select()
-                                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_tipo'))
+                                ->from('producto', array('pro_id', 'pro_nombre', 'pro_descripcion', 'pro_precio', 'pro_tipo', 'pro_tipo_moneda'))
                                 ->where('pro_id=?', $pro_id));
 //        print_r($rs);
 

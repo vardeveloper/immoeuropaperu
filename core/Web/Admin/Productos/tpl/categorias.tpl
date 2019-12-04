@@ -9,7 +9,7 @@
     <tr>
         <td class="w-15 c"><img src="{$smarty.const.BASE_WEB_ROOT}/svc/get-img/productos-pro_{$producto->pro_id}_small/150:113" /></td>
         <td class="w-40 j t"><b>{$producto->html2}</b><br/><br/>{$producto->pro_descripcion}</td>
-        <td class="w-10 bld t r">S/. {$producto->pro_precio} &nbsp; </td>
+        <td class="w-10 bld t r">{$producto->pro_tipo_moneda}{$producto->pro_precio} &nbsp; </td>
         <td class="w-10 bld t c">{$producto->pro_fecha|date_format:"%d/%m/%Y"}</td>
     </tr>
 </table>

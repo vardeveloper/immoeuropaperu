@@ -43,7 +43,7 @@
                                     en {$producto->pro_tipo}
                                 </span>
                                 <span>
-                                    ${$producto->pro_precio} {if $producto->pro_tipo eq 'alquiler'}<small>por mes</small>{/if}
+                                    {$producto->pro_tipo_moneda}{$producto->pro_precio} {if $producto->pro_tipo eq 'alquiler'}<small>por mes</small>{/if}
                                 </span>
                             </h5>
                         </div>

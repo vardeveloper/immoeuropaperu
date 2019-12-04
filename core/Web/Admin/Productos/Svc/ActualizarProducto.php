@@ -29,12 +29,15 @@ class Web_Admin_Productos_Svc_ActualizarProducto
 
         $obj = new Web_Db_Productos();
 
-        $row = array('pro_nombre' => $_POST['pro_nombre'],
+        $row = array(
+            'pro_nombre' => $_POST['pro_nombre'],
+            'pro_tipo_moneda' => $_POST['pro_tipo_moneda'],
             'pro_precio' => $_POST['pro_precio_s'],
             'pro_descripcion' => $_POST['pro_descripcion'],
             'pro_video' => $_POST['pro_video'],
             'pro_tipo' => $_POST['pro_tipo'],
-            'pro_key' => Ey::urlAmigable($_POST['pro_nombre']));
+            'pro_key' => Ey::urlAmigable($_POST['pro_nombre'])
+        );
 
         $obj->update($row, 'pro_id=' . $id);
 
