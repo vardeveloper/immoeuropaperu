@@ -90,8 +90,9 @@
             <td class="lef">
                 <select name="pro_tipo">
                     <option value=""> --------- </option>
-                    <option value="venta" {if $producto->pro_tipo eq 'venta'} selected {/if} >Venta</option>
                     <option value="alquiler" {if $producto->pro_tipo eq 'alquiler'} selected {/if} >Alquiler</option>
+                    <option value="alquilado" {if $producto->pro_tipo eq 'alquilado'} selected {/if} >Alquilado</option>
+                    <option value="venta" {if $producto->pro_tipo eq 'venta'} selected {/if} >Venta</option>
                     <option value="vendido" {if $producto->pro_tipo eq 'vendido'} selected {/if} >Vendido</option>
                 </select>
             </td>

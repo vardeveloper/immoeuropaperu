@@ -86,8 +86,9 @@
             <td class="rig">Condición :</td>
             <td class="lef">
                 <select name="pro_tipo">
-                    <option value="venta">Venta</option>
                     <option value="alquiler">Alquiler</option>
+                    <option value="alquilado">Alquilado</option>
+                    <option value="venta">Venta</option>
                     <option value="vendido">Vendido</option>
                 </select>
             </td>

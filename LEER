@@ -47,3 +47,5 @@ alter table categoria add column cat_orden tinyint default '0' after cat_key;
 alter table producto add column pro_tipo_moneda enum('US $','PEN S/','EUR €') DEFAULT 'US $' after pro_video;
 
 update producto set pro_tipo_moneda = 'US $';
+
+alter table producto modify column pro_tipo enum('alquiler', 'alquilado', 'venta', 'vendido');

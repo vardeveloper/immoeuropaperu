@@ -1,7 +1,7 @@
 <section class="featured-properties-carousel clearfix">
     <div class="narrative">
-        <h3>Featured Properties</h3>
-        <p>View a list of Featured Properties.</p>
+        <h3>Propiedades Destacadas</h3>
+        <p>Ver una lista de propiedades destacadas.</p>
     </div>
     <div class="carousel es-carousel-wrapper">
         <div class="es-carousel">
