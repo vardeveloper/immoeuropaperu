@@ -1,0 +1,39 @@
+SETUP
+=====
+docker pull mattrayner/lamp:latest-1604-php5
+docker run --rm --name immo -p "8008:80" -v ${PWD}:/app mattrayner/lamp:latest-1604-php5
+
+docker exec CONTAINER_ID  mysql -uroot -e "create database immo"
+
+DOCKER
+======
+docker-compose up -d
+docker-compose down
+
+docker images
+docker ps -a
+docker logs -f [CONTAINER_ID]
+docker exec -it [CONTAINER_ID] bash
+
+
+https://hub.docker.com/r/mattrayner/lamp
+
+
+mysqldump -u devar -p database > bk_database.sql
+
+CREATE DATABASE immo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+mysql -u admin -p immo < /app/immoeuro_immo.sql
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04
+
+<VirtualHost *:80>
+        ServerName local.immo
+        #ServerAlias local.immo
+        DocumentRoot /app/public_html
+        <Directory />
+             Require all granted
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/immo-error.log
+        CustomLog ${APACHE_LOG_DIR}/immo-access.log combined
+</VirtualHost>

@@ -33,7 +33,7 @@ define('TPL_ROOT', APP_ROOT . DS . 'tpl');
 define('ADMIN_TPL', ADMIN_ROOT . DS . 'tpl');
 
 // Raiz de la dirección Web (url)
-define('BASE_WEB_ROOT', 'http://local.inmoeuropaperu.com');
+define('BASE_WEB_ROOT', 'http://local.immo');
 
 // Simbolo de moneda predeterminado
 //define('APP_TITLE',':: Tikariy :: AGENCIA DE VIAJES');
@@ -72,9 +72,9 @@ Zend_Session::start();
  */
 $serverConfig = array(
     'host' => 'localhost', /* Servidor de base de datos */
-    'username' => 'root', /* Usuario del servidor MySQL */
-    'password' => '123456', /* Password */
-    'dbname' => 'inmoeuro');
+    'username' => 'admin', /* Usuario del servidor MySQL */
+    'password' => '4FNudDKhhIdo', /* Password */
+    'dbname' => 'immo');
 
 $db = new Zend_Db_Adapter_Mysqli($serverConfig);
 
