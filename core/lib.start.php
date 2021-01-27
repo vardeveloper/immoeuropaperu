@@ -33,7 +33,7 @@ define('TPL_ROOT', APP_ROOT . DS . 'tpl');
 define('ADMIN_TPL', ADMIN_ROOT . DS . 'tpl');
 
 // Raiz de la dirección Web (url)
-define('BASE_WEB_ROOT', 'http://local.immo');
+define('BASE_WEB_ROOT', 'http://127.0.0.1:8080');
 
 // Simbolo de moneda predeterminado
 //define('APP_TITLE',':: Tikariy :: AGENCIA DE VIAJES');
@@ -72,8 +72,8 @@ Zend_Session::start();
  */
 $serverConfig = array(
     'host' => 'localhost', /* Servidor de base de datos */
-    'username' => 'admin', /* Usuario del servidor MySQL */
-    'password' => '4FNudDKhhIdo', /* Password */
+    'username' => 'root', /* Usuario del servidor MySQL */
+    'password' => '', /* Password */
     'dbname' => 'immo');
 
 $db = new Zend_Db_Adapter_Mysqli($serverConfig);

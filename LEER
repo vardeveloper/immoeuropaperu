@@ -36,9 +36,9 @@ _library/Smarty/compile/*
 
 ACCOUNT FTP
 ===========
-vardeveloper@immoeuropaperu.com
-ftp.immoeuropaperu.com
-147852369@
+Nombre de usuario de FTP: vardeveloper@immoeuropaperu.com
+Servidor FTP: ftp.immoeuropaperu.com
+Puerto FTPS explícito de FTP &:  21
 
 SQL
 ===

@@ -3,21 +3,16 @@
         <div class="row">
             <div class="span9">
                 <section class="widget">
-                    <h3 class="title">Nosotros</h3>
+                    <h3 class="title">Nuestra historia</h3>
                     <div class="textwidget">
-                        <p>Somos una nueva alternativa en el rubro inmobiliario, nos especializamos en conseguir y colocar propiedades,  todo tipo de inmuebles, desde casas y departamentos,  inclusive edificios enteros, hoteles y terrenos. </p>
-                        <p>Se le brindara al cliente,  asistencia  en cada paso de la transacción inmobiliaria y le brindamos asesoría técnica, legal,  y notarial. </p>
-                        <p>Las propiedades que representamos en exclusiva y ofrecemos en venta o alquiler cuentan con desarrollo de material publicitario digital e impreso y la instalación de letreros. </p>
-                        <p>Complementamos nuestros servicios con la Administración de Condominios, lo que comprende: 
-                            <strong> Informes Financieros mensuales, 
-                            Organización de Asambleas, 
-                            Seguridad, 
-                            Limpieza, 
-                            Áreas Verdes, 
-                            Control y Supervisión de servicios, 
-                            Mantenimiento bajo Administración, 
-                            Instalaciones, 
-                            Administración y Cobranza</strong></p>
+                        <p>Comenzó el 2014 en Perú, después de capacitarme como agente inmobiliario y recibir un diploma. El nombre Inmobiliaria Europa Perú, proviene de nuestra pareja franco-peruana.</p>
+                        <p>Tenemos nuestros propios inmuebles en venta, así como varios contratos de colaboración con Promotor y Constructor para satisfacer mejor las necesidades de nuestros clientes.</p>
+                        <p>Por razones de seguridad (Covid19) recibimos con cita previa y en un lugar abierto.</p>
+                        <p>Para obtener su NIE podemos hacerlo por usted y ayudarlo en todos sus procedimientos administrativos.</p>
+                        <p>Nuestro idioma principal es el español, hablemos también francés e inglés.</p>
+                        <p>Estamos ubicados en España, la Costa Blanca Comunidad Valenciana, Alicante - Torrevieja.</p>
+                        <p>Le damos la bienvenida</p>
+                        <p><strong>Maria Eugenia Fernández</strong></p>
                         <p></p>
                         <p></p>
                     </div>
@@ -41,8 +36,9 @@
                         <p>C/Murillo 131 Resd. Mirador 1 <br>
                             Urb. El Chaparral 03184 Torrevieja <br>
                             Alicante - España</p>
-                        <p>Celular España: (+34) 643 090533 </p>
+                        <p>Celular España: (+34) 643 090 533 </p>
                         <p>Celular Perú: (+51) 951 724 622 </p>
+                        <p>Habla Francés: (+34) 652 565 209 </p>
                         <p>Email: <a href="mailto:immo.europa.peru@gmail.com">immo.europa.peru@gmail.com</a></p>
                     </div>
                 </section>

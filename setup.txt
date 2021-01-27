@@ -1,9 +1,10 @@
-SETUP
-=====
+SETUP LOCAL
+===========
 docker pull mattrayner/lamp:latest-1604-php5
-docker run --rm --name immo -p "8008:80" -v ${PWD}:/app mattrayner/lamp:latest-1604-php5
+docker run --rm --name immo -p "8080:80" -v ${PWD}:/app mattrayner/lamp:latest-1604-php5
 
-docker exec CONTAINER_ID  mysql -uroot -e "create database immo"
+- http://127.0.0.1:8080/phpmyadmin (option 1)
+
 
 DOCKER
 ======
@@ -16,24 +17,52 @@ docker logs -f [CONTAINER_ID]
 docker exec -it [CONTAINER_ID] bash
 
 
-https://hub.docker.com/r/mattrayner/lamp
+DOCKER (option 2)
+======
+docker exec CONTAINER_ID  mysql -uroot -e "CREATE DATABASE immo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+docker exec CONTAINER_ID  mysql -uroot -e "source immo_test < immoeuro_immo.sql"
+docker inspect −−format '{{ .NetworkSettings.IPAddress }}' CONTAINER_ID
 
 
+MYSQL (option 3) inside docker container
+=====
 mysqldump -u devar -p database > bk_database.sql
-
 CREATE DATABASE immo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
 mysql -u admin -p immo < /app/immoeuro_immo.sql
 
-https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04
 
+CHANGE USER GROUP
+=================
+chown root:root -R app/
+
+
+VIRTUALHOST
+===========
 <VirtualHost *:80>
-        ServerName local.immo
-        #ServerAlias local.immo
+        ServerName immo.local
+        ServerAlias www.immo.local
         DocumentRoot /app/public_html
-        <Directory />
-             Require all granted
+        <Directory /app/public_html>
+                Options -Indexes +FollowSymLinks
+                AllowOverride All
+                Require all granted
         </Directory>
         ErrorLog ${APACHE_LOG_DIR}/immo-error.log
         CustomLog ${APACHE_LOG_DIR}/immo-access.log combined
 </VirtualHost>
+
+a2ensite immo.conf
+
+a2dissite 000-default.conf
+
+service apache2 restart
+
+/etc/hosts
+127.0.0.1       immo.local
+
+
+DOC
+===
+https://hub.docker.com/r/mattrayner/lamp
+https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04
+
